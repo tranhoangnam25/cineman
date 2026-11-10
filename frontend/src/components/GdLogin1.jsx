@@ -1,0 +1,62 @@
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { login1, saveAuth } from '../api'
+
+// GdLogin1 — giao diện Đăng nhập (nhân viên)
+export default function GdLogin1() {
+  const navigate = useNavigate()
+  const [tenDangNhap, setTenDangNhap] = useState('')
+  const [matKhau, setMatKhau] = useState('')
+  const [error, setError] = useState('')
+  const [submitting, setSubmitting] = useState(false)
+
+  async function handleSubmit(e) {
+    e.preventDefault()
+    setError('')
+    setSubmitting(true)
+    try {
+      const data = await login1(tenDangNhap.trim(), matKhau)
+      saveAuth(data)
+      navigate('/bao-cao')
+    } catch (err) {
+      if (err.status === 401) {
+        setError('Tên đăng nhập hoặc mật khẩu không đúng.')
+      } else {
+        setError(err.message || 'Đăng nhập thất bại, vui lòng thử lại sau.')
+      }
+    } finally {
+      setSubmitting(false)
+    }
+  }
+
+  return (
+    <div className="container">
+      <h1 className="page-title">Đăng nhập</h1>
+      <p className="page-subtitle">Dành cho nhân viên rạp CineMan. Sau khi đăng nhập, nhân viên quản lí có thể xem các báo cáo thống kê.</p>
+
+      {error && <div className="alert alert-error">{error}</div>}
+
+      <form className="panel" onSubmit={handleSubmit}>
+        <div className="form-group">
+          <label htmlFor="tenDangNhap">Tên đăng nhập<span className="required">(*)</span></label>
+          <input
+            id="tenDangNhap" type="text" value={tenDangNhap}
+            onChange={(e) => setTenDangNhap(e.target.value)}
+            placeholder="Ví dụ: quanly" autoComplete="username"
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="matKhau">Mật khẩu<span className="required">(*)</span></label>
+          <input
+            id="matKhau" type="password" value={matKhau}
+            onChange={(e) => setMatKhau(e.target.value)}
+            placeholder="Nhập mật khẩu" autoComplete="current-password"
+          />
+        </div>
+        <button className="btn" type="submit" disabled={submitting}>
+          {submitting ? 'Đang đăng nhập…' : 'Đăng nhập'}
+        </button>
+      </form>
+    </div>
+  )
+}

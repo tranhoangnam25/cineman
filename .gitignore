@@ -1,0 +1,14 @@
+# Java / Maven
+backend/target/
+backend/data/
+# Node
+frontend/node_modules/
+frontend/dist/
+# Kho thu vien Maven tai bang curl (chi dung tren may ao nay)
+localrepo/
+# He thong
+.DS_Store
+*.log
+# Du lieu H2 + thu muc lam viec rieng cua may ao
+data/
+.m2/
