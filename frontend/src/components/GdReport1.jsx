@@ -17,23 +17,6 @@ export default function GdReport1() {
           <span className="badge-go">›</span>
         </Link>
 
-        <div className="report-item disabled" aria-disabled="true">
-          <span className="icon">👥</span>
-          <div>
-            <h3>Thống kê khách hàng</h3>
-            <p>Thống kê số lượng và tình hình khách hàng, thành viên của rạp.</p>
-          </div>
-          <span className="badge-soon">Chưa triển khai</span>
-        </div>
-
-        <div className="report-item disabled" aria-disabled="true">
-          <span className="icon">💰</span>
-          <div>
-            <h3>Thống kê doanh thu</h3>
-            <p>Thống kê tổng doanh thu bán vé của rạp theo thời gian.</p>
-          </div>
-          <span className="badge-soon">Chưa triển khai</span>
-        </div>
       </div>
     </div>
   )
