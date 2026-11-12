@@ -12,3 +12,6 @@ localrepo/
 # Du lieu H2 + thu muc lam viec rieng cua may ao
 data/
 .m2/
+
+# File chua thong tin ket noi CSDL (bi mat, khong commit)
+db.env
