@@ -7,28 +7,28 @@ import java.time.LocalDate;
 public class RegisterMemberResponse1 {
 
     private Long customerId;
-    private String hoTen;
-    private LocalDate ngaySinh;
-    private String gioiTinh;
-    private String soDienThoai;
+    private String fullName;
+    private LocalDate dateOfBirth;
+    private String gender;
+    private String phoneNumber;
     private String email;
-    private String diaChi;
+    private String address;
 
     private Long memberId;
 
     @JsonFormat(pattern = "yyyy-MM-dd")
-    private LocalDate ngayDangKi;
-    private String hangMember1;
-    private int diemTichLuy;
+    private LocalDate registrationDate;
+    private String membershipTier;
+    private int loyaltyPoints;
 
-    private String maThe;
-
-    @JsonFormat(pattern = "yyyy-MM-dd")
-    private LocalDate ngayCap;
+    private String cardNumber;
 
     @JsonFormat(pattern = "yyyy-MM-dd")
-    private LocalDate ngayHetHan;
-    private String trangThaiThe;
+    private LocalDate issueDate;
+
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    private LocalDate expiryDate;
+    private String cardStatus;
 
     public Long getCustomerId() {
         return customerId;
@@ -38,36 +38,36 @@ public class RegisterMemberResponse1 {
         this.customerId = customerId;
     }
 
-    public String getHoTen() {
-        return hoTen;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setHoTen(String hoTen) {
-        this.hoTen = hoTen;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
-    public LocalDate getNgaySinh() {
-        return ngaySinh;
+    public LocalDate getDateOfBirth() {
+        return dateOfBirth;
     }
 
-    public void setNgaySinh(LocalDate ngaySinh) {
-        this.ngaySinh = ngaySinh;
+    public void setDateOfBirth(LocalDate dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 
-    public String getGioiTinh() {
-        return gioiTinh;
+    public String getGender() {
+        return gender;
     }
 
-    public void setGioiTinh(String gioiTinh) {
-        this.gioiTinh = gioiTinh;
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
-    public String getSoDienThoai() {
-        return soDienThoai;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setSoDienThoai(String soDienThoai) {
-        this.soDienThoai = soDienThoai;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     public String getEmail() {
@@ -78,12 +78,12 @@ public class RegisterMemberResponse1 {
         this.email = email;
     }
 
-    public String getDiaChi() {
-        return diaChi;
+    public String getAddress() {
+        return address;
     }
 
-    public void setDiaChi(String diaChi) {
-        this.diaChi = diaChi;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public Long getMemberId() {
@@ -94,59 +94,59 @@ public class RegisterMemberResponse1 {
         this.memberId = memberId;
     }
 
-    public LocalDate getNgayDangKi() {
-        return ngayDangKi;
+    public LocalDate getRegistrationDate() {
+        return registrationDate;
     }
 
-    public void setNgayDangKi(LocalDate ngayDangKi) {
-        this.ngayDangKi = ngayDangKi;
+    public void setRegistrationDate(LocalDate registrationDate) {
+        this.registrationDate = registrationDate;
     }
 
-    public String getHangMember1() {
-        return hangMember1;
+    public String getMembershipTier() {
+        return membershipTier;
     }
 
-    public void setHangMember1(String hangMember1) {
-        this.hangMember1 = hangMember1;
+    public void setMembershipTier(String membershipTier) {
+        this.membershipTier = membershipTier;
     }
 
-    public int getDiemTichLuy() {
-        return diemTichLuy;
+    public int getLoyaltyPoints() {
+        return loyaltyPoints;
     }
 
-    public void setDiemTichLuy(int diemTichLuy) {
-        this.diemTichLuy = diemTichLuy;
+    public void setLoyaltyPoints(int loyaltyPoints) {
+        this.loyaltyPoints = loyaltyPoints;
     }
 
-    public String getMaThe() {
-        return maThe;
+    public String getCardNumber() {
+        return cardNumber;
     }
 
-    public void setMaThe(String maThe) {
-        this.maThe = maThe;
+    public void setCardNumber(String cardNumber) {
+        this.cardNumber = cardNumber;
     }
 
-    public LocalDate getNgayCap() {
-        return ngayCap;
+    public LocalDate getIssueDate() {
+        return issueDate;
     }
 
-    public void setNgayCap(LocalDate ngayCap) {
-        this.ngayCap = ngayCap;
+    public void setIssueDate(LocalDate issueDate) {
+        this.issueDate = issueDate;
     }
 
-    public LocalDate getNgayHetHan() {
-        return ngayHetHan;
+    public LocalDate getExpiryDate() {
+        return expiryDate;
     }
 
-    public void setNgayHetHan(LocalDate ngayHetHan) {
-        this.ngayHetHan = ngayHetHan;
+    public void setExpiryDate(LocalDate expiryDate) {
+        this.expiryDate = expiryDate;
     }
 
-    public String getTrangThaiThe() {
-        return trangThaiThe;
+    public String getCardStatus() {
+        return cardStatus;
     }
 
-    public void setTrangThaiThe(String trangThaiThe) {
-        this.trangThaiThe = trangThaiThe;
+    public void setCardStatus(String cardStatus) {
+        this.cardStatus = cardStatus;
     }
 }

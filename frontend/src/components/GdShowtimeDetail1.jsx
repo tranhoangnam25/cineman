@@ -63,10 +63,10 @@ export default function GdShowtimeDetail1() {
                 <tr key={inv.invoiceId}>
                   <td className="center">{idx + 1}</td>
                   <td>{inv.invoiceId}</td>
-                  <td>{formatDateTime(inv.ngayLap)}</td>
-                  <td>{inv.tenKhachHang || 'Khách vãng lai'}</td>
-                  <td className="num">{inv.soVe}</td>
-                  <td className="num">{formatVND(inv.tongTien)}</td>
+                  <td>{formatDateTime(inv.issuedAt)}</td>
+                  <td>{inv.customerName || 'Khách vãng lai'}</td>
+                  <td className="num">{inv.ticketCount}</td>
+                  <td className="num">{formatVND(inv.totalAmount)}</td>
                 </tr>
               ))
             )}

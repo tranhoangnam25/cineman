@@ -27,24 +27,24 @@ public class Ticket1 {
     @JoinColumn(name = "invoiceId")
     private Invoice1 invoice1;
 
-    @Column(name = "soGhe", length = 10)
-    private String soGhe;
+    @Column(name = "seatNumber", length = 10)
+    private String seatNumber;
 
-    @Column(name = "giaVe")
-    private BigDecimal giaVe;
+    @Column(name = "ticketPrice")
+    private BigDecimal ticketPrice;
 
-    @Column(name = "trangThai", length = 20)
-    private String trangThai;
+    @Column(name = "status", length = 20)
+    private String status;
 
     public Ticket1() {
     }
 
-    public Ticket1(Showtime1 showtime1, Invoice1 invoice1, String soGhe, BigDecimal giaVe, String trangThai) {
+    public Ticket1(Showtime1 showtime1, Invoice1 invoice1, String seatNumber, BigDecimal ticketPrice, String status) {
         this.showtime1 = showtime1;
         this.invoice1 = invoice1;
-        this.soGhe = soGhe;
-        this.giaVe = giaVe;
-        this.trangThai = trangThai;
+        this.seatNumber = seatNumber;
+        this.ticketPrice = ticketPrice;
+        this.status = status;
     }
 
     public Long getId() {
@@ -71,27 +71,27 @@ public class Ticket1 {
         this.invoice1 = invoice1;
     }
 
-    public String getSoGhe() {
-        return soGhe;
+    public String getSeatNumber() {
+        return seatNumber;
     }
 
-    public void setSoGhe(String soGhe) {
-        this.soGhe = soGhe;
+    public void setSeatNumber(String seatNumber) {
+        this.seatNumber = seatNumber;
     }
 
-    public BigDecimal getGiaVe() {
-        return giaVe;
+    public BigDecimal getTicketPrice() {
+        return ticketPrice;
     }
 
-    public void setGiaVe(BigDecimal giaVe) {
-        this.giaVe = giaVe;
+    public void setTicketPrice(BigDecimal ticketPrice) {
+        this.ticketPrice = ticketPrice;
     }
 
-    public String getTrangThai() {
-        return trangThai;
+    public String getStatus() {
+        return status;
     }
 
-    public void setTrangThai(String trangThai) {
-        this.trangThai = trangThai;
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

@@ -19,15 +19,15 @@ public class AuthService1 {
         this.tokenService1 = tokenService1;
     }
 
-    public LoginResponse1 dangNhap(LoginRequest1 request) {
-        Employee1 employee1 = employeeRepository1.findByTenDangNhap(request.getTenDangNhap())
+    public LoginResponse1 login(LoginRequest1 request) {
+        Employee1 employee1 = employeeRepository1.findByUsername(request.getUsername())
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.UNAUTHORIZED,
                         "Tên đăng nhập hoặc mật khẩu không đúng"));
-        if (!employee1.getMatKhau().equals(request.getMatKhau())) {
+        if (!employee1.getPassword().equals(request.getPassword())) {
             throw new ResponseStatusException(HttpStatus.UNAUTHORIZED,
                     "Tên đăng nhập hoặc mật khẩu không đúng");
         }
         String token = tokenService1.taoToken(employee1);
-        return new LoginResponse1(token, employee1.getHoTen(), employee1.getVaiTro());
+        return new LoginResponse1(token, employee1.getFullName(), employee1.getRole());
     }
 }

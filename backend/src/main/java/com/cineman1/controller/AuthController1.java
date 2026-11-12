@@ -20,7 +20,7 @@ public class AuthController1 {
     }
 
     @PostMapping("/login1")
-    public ResponseEntity<LoginResponse1> dangNhap(@RequestBody LoginRequest1 request) {
-        return ResponseEntity.ok(authService1.dangNhap(request));
+    public ResponseEntity<LoginResponse1> login(@RequestBody LoginRequest1 request) {
+        return ResponseEntity.ok(authService1.login(request));
     }
 }

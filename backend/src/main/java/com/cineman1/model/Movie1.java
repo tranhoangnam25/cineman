@@ -17,43 +17,43 @@ public class Movie1 {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "tenMovie1", length = 200)
-    private String tenMovie1;
+    @Column(name = "movieName", length = 200)
+    private String movieName;
 
-    @Column(name = "theLoai", length = 100)
-    private String theLoai;
+    @Column(name = "genre", length = 100)
+    private String genre;
 
-    @Column(name = "daoDien", length = 100)
-    private String daoDien;
+    @Column(name = "director", length = 100)
+    private String director;
 
-    @Column(name = "dienVien", length = 300)
-    private String dienVien;
+    @Column(name = "actors", length = 300)
+    private String actors;
 
-    @Column(name = "thoiLuong")
-    private int thoiLuong;
+    @Column(name = "duration")
+    private int duration;
 
-    @Column(name = "ngayKhoiChieu")
-    private LocalDate ngayKhoiChieu;
+    @Column(name = "releaseDate")
+    private LocalDate releaseDate;
 
-    @Column(name = "moTa", length = 1000)
-    private String moTa;
+    @Column(name = "description", length = 1000)
+    private String description;
 
-    @Column(name = "trangThai", length = 20)
-    private String trangThai;
+    @Column(name = "status", length = 20)
+    private String status;
 
     public Movie1() {
     }
 
-    public Movie1(String tenMovie1, String theLoai, String daoDien, String dienVien, int thoiLuong,
-                  LocalDate ngayKhoiChieu, String moTa, String trangThai) {
-        this.tenMovie1 = tenMovie1;
-        this.theLoai = theLoai;
-        this.daoDien = daoDien;
-        this.dienVien = dienVien;
-        this.thoiLuong = thoiLuong;
-        this.ngayKhoiChieu = ngayKhoiChieu;
-        this.moTa = moTa;
-        this.trangThai = trangThai;
+    public Movie1(String movieName, String genre, String director, String actors, int duration,
+                  LocalDate releaseDate, String description, String status) {
+        this.movieName = movieName;
+        this.genre = genre;
+        this.director = director;
+        this.actors = actors;
+        this.duration = duration;
+        this.releaseDate = releaseDate;
+        this.description = description;
+        this.status = status;
     }
 
     public Long getId() {
@@ -64,67 +64,67 @@ public class Movie1 {
         this.id = id;
     }
 
-    public String getTenMovie1() {
-        return tenMovie1;
+    public String getMovieName() {
+        return movieName;
     }
 
-    public void setTenMovie1(String tenMovie1) {
-        this.tenMovie1 = tenMovie1;
+    public void setMovieName(String movieName) {
+        this.movieName = movieName;
     }
 
-    public String getTheLoai() {
-        return theLoai;
+    public String getGenre() {
+        return genre;
     }
 
-    public void setTheLoai(String theLoai) {
-        this.theLoai = theLoai;
+    public void setGenre(String genre) {
+        this.genre = genre;
     }
 
-    public String getDaoDien() {
-        return daoDien;
+    public String getDirector() {
+        return director;
     }
 
-    public void setDaoDien(String daoDien) {
-        this.daoDien = daoDien;
+    public void setDirector(String director) {
+        this.director = director;
     }
 
-    public String getDienVien() {
-        return dienVien;
+    public String getActors() {
+        return actors;
     }
 
-    public void setDienVien(String dienVien) {
-        this.dienVien = dienVien;
+    public void setActors(String actors) {
+        this.actors = actors;
     }
 
-    public int getThoiLuong() {
-        return thoiLuong;
+    public int getDuration() {
+        return duration;
     }
 
-    public void setThoiLuong(int thoiLuong) {
-        this.thoiLuong = thoiLuong;
+    public void setDuration(int duration) {
+        this.duration = duration;
     }
 
-    public LocalDate getNgayKhoiChieu() {
-        return ngayKhoiChieu;
+    public LocalDate getReleaseDate() {
+        return releaseDate;
     }
 
-    public void setNgayKhoiChieu(LocalDate ngayKhoiChieu) {
-        this.ngayKhoiChieu = ngayKhoiChieu;
+    public void setReleaseDate(LocalDate releaseDate) {
+        this.releaseDate = releaseDate;
     }
 
-    public String getMoTa() {
-        return moTa;
+    public String getDescription() {
+        return description;
     }
 
-    public void setMoTa(String moTa) {
-        this.moTa = moTa;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public String getTrangThai() {
-        return trangThai;
+    public String getStatus() {
+        return status;
     }
 
-    public void setTrangThai(String trangThai) {
-        this.trangThai = trangThai;
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

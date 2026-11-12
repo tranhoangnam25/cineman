@@ -24,8 +24,8 @@ export default function GdMovieDetail1() {
           getMovieShowtimes1(movieId, startDate, endDate),
         ])
         if (cancelled) return
-        const found = (stats?.items || stats?.danhSach)?.find((i) => String(i.movieId) === String(movieId))
-        if (found) setMovieName(found.tenMovie1)
+        const found = (stats?.items || stats?.movies)?.find((i) => String(i.movieId) === String(movieId))
+        if (found) setMovieName(found.movieName)
         setShowtimes(Array.isArray(sts) ? sts : [])
       } catch (err) {
         if (cancelled) return
@@ -83,11 +83,11 @@ export default function GdMovieDetail1() {
                   onClick={() => navigate(`/bao-cao/suat-chieu/${st.showtimeId}`)}
                 >
                   <td className="center">{idx + 1}</td>
-                  <td>{formatDate(st.ngayChieu)}</td>
-                  <td>{formatTime(st.gioBatDau)}</td>
-                  <td>{st.tenPhong}</td>
-                  <td className="num">{st.soVeDaBan}</td>
-                  <td className="num">{formatVND(st.doanhThu)}</td>
+                  <td>{formatDate(st.showDate)}</td>
+                  <td>{formatTime(st.startTime)}</td>
+                  <td>{st.roomName}</td>
+                  <td className="num">{st.ticketsSold}</td>
+                  <td className="num">{formatVND(st.revenue)}</td>
                 </tr>
               ))
             )}

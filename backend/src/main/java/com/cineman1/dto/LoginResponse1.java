@@ -3,16 +3,16 @@ package com.cineman1.dto;
 public class LoginResponse1 {
 
     private String token;
-    private String hoTen;
-    private String vaiTro;
+    private String fullName;
+    private String role;
 
     public LoginResponse1() {
     }
 
-    public LoginResponse1(String token, String hoTen, String vaiTro) {
+    public LoginResponse1(String token, String fullName, String role) {
         this.token = token;
-        this.hoTen = hoTen;
-        this.vaiTro = vaiTro;
+        this.fullName = fullName;
+        this.role = role;
     }
 
     public String getToken() {
@@ -23,19 +23,19 @@ public class LoginResponse1 {
         this.token = token;
     }
 
-    public String getHoTen() {
-        return hoTen;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setHoTen(String hoTen) {
-        this.hoTen = hoTen;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
-    public String getVaiTro() {
-        return vaiTro;
+    public String getRole() {
+        return role;
     }
 
-    public void setVaiTro(String vaiTro) {
-        this.vaiTro = vaiTro;
+    public void setRole(String role) {
+        this.role = role;
     }
 }

@@ -7,11 +7,11 @@ import java.util.Optional;
 
 public interface MemberRepository1 extends JpaRepository<Customer1, Long> {
 
-    boolean existsBySoDienThoai(String soDienThoai);
+    boolean existsByPhoneNumber(String phoneNumber);
 
     boolean existsByEmail(String email);
 
-    Optional<Customer1> findBySoDienThoai(String soDienThoai);
+    Optional<Customer1> findByPhoneNumber(String phoneNumber);
 
     Optional<Customer1> findByEmail(String email);
 }

@@ -28,25 +28,25 @@ public class Invoice1 {
     @JoinColumn(name = "employeeId", nullable = true)
     private Employee1 employee1;
 
-    @Column(name = "ngayLap")
-    private LocalDateTime ngayLap;
+    @Column(name = "issuedAt")
+    private LocalDateTime issuedAt;
 
-    @Column(name = "tongTien")
-    private BigDecimal tongTien;
+    @Column(name = "totalAmount")
+    private BigDecimal totalAmount;
 
-    @Column(name = "hinhThucThanhToan", length = 20)
-    private String hinhThucThanhToan;
+    @Column(name = "paymentMethod", length = 20)
+    private String paymentMethod;
 
     public Invoice1() {
     }
 
-    public Invoice1(Customer1 customer1, Employee1 employee1, LocalDateTime ngayLap,
-                    BigDecimal tongTien, String hinhThucThanhToan) {
+    public Invoice1(Customer1 customer1, Employee1 employee1, LocalDateTime issuedAt,
+                    BigDecimal totalAmount, String paymentMethod) {
         this.customer1 = customer1;
         this.employee1 = employee1;
-        this.ngayLap = ngayLap;
-        this.tongTien = tongTien;
-        this.hinhThucThanhToan = hinhThucThanhToan;
+        this.issuedAt = issuedAt;
+        this.totalAmount = totalAmount;
+        this.paymentMethod = paymentMethod;
     }
 
     public Long getId() {
@@ -73,27 +73,27 @@ public class Invoice1 {
         this.employee1 = employee1;
     }
 
-    public LocalDateTime getNgayLap() {
-        return ngayLap;
+    public LocalDateTime getIssuedAt() {
+        return issuedAt;
     }
 
-    public void setNgayLap(LocalDateTime ngayLap) {
-        this.ngayLap = ngayLap;
+    public void setIssuedAt(LocalDateTime issuedAt) {
+        this.issuedAt = issuedAt;
     }
 
-    public BigDecimal getTongTien() {
-        return tongTien;
+    public BigDecimal getTotalAmount() {
+        return totalAmount;
     }
 
-    public void setTongTien(BigDecimal tongTien) {
-        this.tongTien = tongTien;
+    public void setTotalAmount(BigDecimal totalAmount) {
+        this.totalAmount = totalAmount;
     }
 
-    public String getHinhThucThanhToan() {
-        return hinhThucThanhToan;
+    public String getPaymentMethod() {
+        return paymentMethod;
     }
 
-    public void setHinhThucThanhToan(String hinhThucThanhToan) {
-        this.hinhThucThanhToan = hinhThucThanhToan;
+    public void setPaymentMethod(String paymentMethod) {
+        this.paymentMethod = paymentMethod;
     }
 }

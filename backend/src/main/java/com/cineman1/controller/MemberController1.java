@@ -22,8 +22,8 @@ public class MemberController1 {
     }
 
     @PostMapping("/register1")
-    public ResponseEntity<RegisterMemberResponse1> dangKiThanhVien(@Valid @RequestBody RegisterMemberRequest1 request) {
-        RegisterMemberResponse1 response = memberService1.dangKiThanhVien(request);
+    public ResponseEntity<RegisterMemberResponse1> registerMember(@Valid @RequestBody RegisterMemberRequest1 request) {
+        RegisterMemberResponse1 response = memberService1.registerMember(request);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 }

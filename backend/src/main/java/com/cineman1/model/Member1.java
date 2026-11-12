@@ -23,23 +23,23 @@ public class Member1 {
     @JoinColumn(name = "customerId", unique = true)
     private Customer1 customer1;
 
-    @Column(name = "ngayDangKi")
-    private LocalDate ngayDangKi;
+    @Column(name = "registrationDate")
+    private LocalDate registrationDate;
 
-    @Column(name = "hangMember1", length = 20)
-    private String hangMember1;
+    @Column(name = "membershipTier", length = 20)
+    private String membershipTier;
 
-    @Column(name = "diemTichLuy")
-    private int diemTichLuy;
+    @Column(name = "loyaltyPoints")
+    private int loyaltyPoints;
 
     public Member1() {
     }
 
-    public Member1(Customer1 customer1, LocalDate ngayDangKi, String hangMember1, int diemTichLuy) {
+    public Member1(Customer1 customer1, LocalDate registrationDate, String membershipTier, int loyaltyPoints) {
         this.customer1 = customer1;
-        this.ngayDangKi = ngayDangKi;
-        this.hangMember1 = hangMember1;
-        this.diemTichLuy = diemTichLuy;
+        this.registrationDate = registrationDate;
+        this.membershipTier = membershipTier;
+        this.loyaltyPoints = loyaltyPoints;
     }
 
     public Long getId() {
@@ -58,27 +58,27 @@ public class Member1 {
         this.customer1 = customer1;
     }
 
-    public LocalDate getNgayDangKi() {
-        return ngayDangKi;
+    public LocalDate getRegistrationDate() {
+        return registrationDate;
     }
 
-    public void setNgayDangKi(LocalDate ngayDangKi) {
-        this.ngayDangKi = ngayDangKi;
+    public void setRegistrationDate(LocalDate registrationDate) {
+        this.registrationDate = registrationDate;
     }
 
-    public String getHangMember1() {
-        return hangMember1;
+    public String getMembershipTier() {
+        return membershipTier;
     }
 
-    public void setHangMember1(String hangMember1) {
-        this.hangMember1 = hangMember1;
+    public void setMembershipTier(String membershipTier) {
+        this.membershipTier = membershipTier;
     }
 
-    public int getDiemTichLuy() {
-        return diemTichLuy;
+    public int getLoyaltyPoints() {
+        return loyaltyPoints;
     }
 
-    public void setDiemTichLuy(int diemTichLuy) {
-        this.diemTichLuy = diemTichLuy;
+    public void setLoyaltyPoints(int loyaltyPoints) {
+        this.loyaltyPoints = loyaltyPoints;
     }
 }

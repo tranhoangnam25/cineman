@@ -29,29 +29,29 @@ public class Showtime1 {
     @JoinColumn(name = "screeningRoomId")
     private ScreeningRoom1 screeningRoom1;
 
-    @Column(name = "ngayChieu")
-    private LocalDate ngayChieu;
+    @Column(name = "showDate")
+    private LocalDate showDate;
 
-    @Column(name = "gioBatDau")
-    private LocalTime gioBatDau;
+    @Column(name = "startTime")
+    private LocalTime startTime;
 
-    @Column(name = "gioKetThuc")
-    private LocalTime gioKetThuc;
+    @Column(name = "endTime")
+    private LocalTime endTime;
 
-    @Column(name = "giaVe")
-    private BigDecimal giaVe;
+    @Column(name = "ticketPrice")
+    private BigDecimal ticketPrice;
 
     public Showtime1() {
     }
 
-    public Showtime1(Movie1 movie1, ScreeningRoom1 screeningRoom1, LocalDate ngayChieu,
-                     LocalTime gioBatDau, LocalTime gioKetThuc, BigDecimal giaVe) {
+    public Showtime1(Movie1 movie1, ScreeningRoom1 screeningRoom1, LocalDate showDate,
+                     LocalTime startTime, LocalTime endTime, BigDecimal ticketPrice) {
         this.movie1 = movie1;
         this.screeningRoom1 = screeningRoom1;
-        this.ngayChieu = ngayChieu;
-        this.gioBatDau = gioBatDau;
-        this.gioKetThuc = gioKetThuc;
-        this.giaVe = giaVe;
+        this.showDate = showDate;
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.ticketPrice = ticketPrice;
     }
 
     public Long getId() {
@@ -78,35 +78,35 @@ public class Showtime1 {
         this.screeningRoom1 = screeningRoom1;
     }
 
-    public LocalDate getNgayChieu() {
-        return ngayChieu;
+    public LocalDate getShowDate() {
+        return showDate;
     }
 
-    public void setNgayChieu(LocalDate ngayChieu) {
-        this.ngayChieu = ngayChieu;
+    public void setShowDate(LocalDate showDate) {
+        this.showDate = showDate;
     }
 
-    public LocalTime getGioBatDau() {
-        return gioBatDau;
+    public LocalTime getStartTime() {
+        return startTime;
     }
 
-    public void setGioBatDau(LocalTime gioBatDau) {
-        this.gioBatDau = gioBatDau;
+    public void setStartTime(LocalTime startTime) {
+        this.startTime = startTime;
     }
 
-    public LocalTime getGioKetThuc() {
-        return gioKetThuc;
+    public LocalTime getEndTime() {
+        return endTime;
     }
 
-    public void setGioKetThuc(LocalTime gioKetThuc) {
-        this.gioKetThuc = gioKetThuc;
+    public void setEndTime(LocalTime endTime) {
+        this.endTime = endTime;
     }
 
-    public BigDecimal getGiaVe() {
-        return giaVe;
+    public BigDecimal getTicketPrice() {
+        return ticketPrice;
     }
 
-    public void setGiaVe(BigDecimal giaVe) {
-        this.giaVe = giaVe;
+    public void setTicketPrice(BigDecimal ticketPrice) {
+        this.ticketPrice = ticketPrice;
     }
 }

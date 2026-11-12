@@ -9,7 +9,7 @@ export function getToken() {
 
 export function saveAuth(data) {
   localStorage.setItem('cineman_token', data.token)
-  localStorage.setItem('cineman_user', JSON.stringify({ hoTen: data.hoTen, vaiTro: data.vaiTro }))
+  localStorage.setItem('cineman_user', JSON.stringify({ fullName: data.fullName, role: data.role }))
 }
 
 export function clearAuth() {
@@ -42,9 +42,9 @@ async function request(path, { method = 'GET', body, auth = false } = {}) {
   return data
 }
 
-// POST /api/auth/login1 {tenDangNhap, matKhau} -> {token, hoTen, vaiTro}
-export function login1(tenDangNhap, matKhau) {
-  return request('/api/auth/login1', { method: 'POST', body: { tenDangNhap, matKhau } })
+// POST /api/auth/login1 {username, password} -> {token, fullName, role}
+export function login1(username, password) {
+  return request('/api/auth/login1', { method: 'POST', body: { username, password } })
 }
 
 // POST /api/members/register1 -> 201 + thông tin thành viên & thẻ

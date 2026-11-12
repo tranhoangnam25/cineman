@@ -37,7 +37,7 @@ export default function GdMovieStatistics1() {
     }
   }
 
-  const items = result?.items || result?.danhSach || []
+  const items = result?.items || result?.movies || []
 
   return (
     <div className="container">
@@ -88,9 +88,9 @@ export default function GdMovieStatistics1() {
                   onClick={() => navigate(`/bao-cao/thong-ke-phim/${item.movieId}?startDate=${startDate}&endDate=${endDate}`)}
                 >
                   <td className="center">{idx + 1}</td>
-                  <td>{item.tenMovie1}</td>
-                  <td className="num">{item.soVeDaBan}</td>
-                  <td className="num">{formatVND(item.doanhThu)}</td>
+                  <td>{item.movieName}</td>
+                  <td className="num">{item.ticketsSold}</td>
+                  <td className="num">{formatVND(item.revenue)}</td>
                 </tr>
               ))
             )}
@@ -99,8 +99,8 @@ export default function GdMovieStatistics1() {
             <tfoot>
               <tr>
                 <td colSpan={2}>Tổng cộng</td>
-                <td className="num">{result.tongSoVe}</td>
-                <td className="num">{formatVND(result.tongDoanhThu)}</td>
+                <td className="num">{result.totalTickets}</td>
+                <td className="num">{formatVND(result.totalRevenue)}</td>
               </tr>
             </tfoot>
           )}

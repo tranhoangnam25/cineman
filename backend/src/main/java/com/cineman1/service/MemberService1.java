@@ -28,66 +28,66 @@ public class MemberService1 {
         this.membershipCardRepository1 = membershipCardRepository1;
     }
 
-    // Tuong ung MemberDAO1.kiemTraTrungLap() trong bieu do lop thiet ke:
+    // Tuong ung MemberDAO1.checkDuplicate() trong bieu do lop thiet ke:
     // trung so dien thoai hoac email thi nem DuplicateMemberException1 voi dung field loi.
-    public void kiemTraTrungLap(String soDienThoai, String email) {
-        if (memberRepository1.existsBySoDienThoai(soDienThoai)) {
-            throw new DuplicateMemberException1("soDienThoai", "Số điện thoại đã được đăng kí");
+    public void checkDuplicate(String phoneNumber, String email) {
+        if (memberRepository1.existsByPhoneNumber(phoneNumber)) {
+            throw new DuplicateMemberException1("phoneNumber", "Số điện thoại đã được đăng kí");
         }
         if (memberRepository1.existsByEmail(email)) {
             throw new DuplicateMemberException1("email", "Email đã được đăng kí");
         }
     }
 
-    // Tuong ung MemberDAO1.themThanhVien(): ghi tblCustomer1 + tblMember1.
-    public Member1 themThanhVien(RegisterMemberRequest1 request) {
+    // Tuong ung MemberDAO1.addMember(): ghi tblCustomer1 + tblMember1.
+    public Member1 addMember(RegisterMemberRequest1 request) {
         LocalDate today = LocalDate.now();
         Customer1 customer1 = new Customer1(
-                request.getHoTen(),
-                request.getNgaySinh(),
-                request.getGioiTinh(),
-                request.getSoDienThoai(),
+                request.getFullName(),
+                request.getDateOfBirth(),
+                request.getGender(),
+                request.getPhoneNumber(),
                 request.getEmail(),
-                request.getDiaChi());
+                request.getAddress());
         customer1 = memberRepository1.save(customer1);
 
         Member1 member1 = new Member1(customer1, today, "Thường", 0);
         return memberInfoRepository1.save(member1);
     }
 
-    // Tuong ung MembershipCardDAO1.themThe(): ghi tblMembershipCard1,
+    // Tuong ung MembershipCardDAO1.addCard(): ghi tblMembershipCard1,
     // ma the theo dinh dang CM + 8 chu so (zero-padded theo id cua the).
-    public MembershipCard1 themThe(Member1 member1) {
+    public MembershipCard1 addCard(Member1 member1) {
         LocalDate today = LocalDate.now();
         MembershipCard1 card1 = new MembershipCard1(member1, "TEMP", today, today.plusYears(1), "Đang dùng");
         card1 = membershipCardRepository1.save(card1);
-        card1.setMaThe(String.format("CM%08d", card1.getId()));
+        card1.setCardNumber(String.format("CM%08d", card1.getId()));
         return membershipCardRepository1.save(card1);
     }
 
     @Transactional
-    public RegisterMemberResponse1 dangKiThanhVien(RegisterMemberRequest1 request) {
-        kiemTraTrungLap(request.getSoDienThoai(), request.getEmail());
-        Member1 member1 = themThanhVien(request);
-        MembershipCard1 card1 = themThe(member1);
+    public RegisterMemberResponse1 registerMember(RegisterMemberRequest1 request) {
+        checkDuplicate(request.getPhoneNumber(), request.getEmail());
+        Member1 member1 = addMember(request);
+        MembershipCard1 card1 = addCard(member1);
 
         Customer1 customer1 = member1.getCustomer1();
         RegisterMemberResponse1 response = new RegisterMemberResponse1();
         response.setCustomerId(customer1.getId());
-        response.setHoTen(customer1.getHoTen());
-        response.setNgaySinh(customer1.getNgaySinh());
-        response.setGioiTinh(customer1.getGioiTinh());
-        response.setSoDienThoai(customer1.getSoDienThoai());
+        response.setFullName(customer1.getFullName());
+        response.setDateOfBirth(customer1.getDateOfBirth());
+        response.setGender(customer1.getGender());
+        response.setPhoneNumber(customer1.getPhoneNumber());
         response.setEmail(customer1.getEmail());
-        response.setDiaChi(customer1.getDiaChi());
+        response.setAddress(customer1.getAddress());
         response.setMemberId(member1.getId());
-        response.setNgayDangKi(member1.getNgayDangKi());
-        response.setHangMember1(member1.getHangMember1());
-        response.setDiemTichLuy(member1.getDiemTichLuy());
-        response.setMaThe(card1.getMaThe());
-        response.setNgayCap(card1.getNgayCap());
-        response.setNgayHetHan(card1.getNgayHetHan());
-        response.setTrangThaiThe(card1.getTrangThai());
+        response.setRegistrationDate(member1.getRegistrationDate());
+        response.setMembershipTier(member1.getMembershipTier());
+        response.setLoyaltyPoints(member1.getLoyaltyPoints());
+        response.setCardNumber(card1.getCardNumber());
+        response.setIssueDate(card1.getIssueDate());
+        response.setExpiryDate(card1.getExpiryDate());
+        response.setCardStatus(card1.getStatus());
         return response;
     }
 }

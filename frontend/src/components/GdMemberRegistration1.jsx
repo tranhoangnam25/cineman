@@ -4,12 +4,12 @@ import { registerMember1 } from '../api'
 // GdMemberRegistration1 — giao diện Đăng kí thành viên (khách hàng)
 export default function GdMemberRegistration1() {
   const [form, setForm] = useState({
-    hoTen: '',
-    ngaySinh: '',
-    gioiTinh: 'Nam',
-    soDienThoai: '',
+    fullName: '',
+    dateOfBirth: '',
+    gender: 'Nam',
+    phoneNumber: '',
     email: '',
-    diaChi: '',
+    address: '',
   })
   const [errors, setErrors] = useState({})
   const [generalError, setGeneralError] = useState('')
@@ -29,12 +29,12 @@ export default function GdMemberRegistration1() {
     setSubmitting(true)
     try {
       const payload = {
-        hoTen: form.hoTen.trim(),
-        ngaySinh: form.ngaySinh || null,
-        gioiTinh: form.gioiTinh,
-        soDienThoai: form.soDienThoai.trim(),
+        fullName: form.fullName.trim(),
+        dateOfBirth: form.dateOfBirth || null,
+        gender: form.gender,
+        phoneNumber: form.phoneNumber.trim(),
         email: form.email.trim(),
-        diaChi: form.diaChi.trim(),
+        address: form.address.trim(),
       }
       const result = await registerMember1(payload)
       setSuccess(result)
@@ -42,7 +42,7 @@ export default function GdMemberRegistration1() {
       if (err.status === 400 && err.data) {
         // Lỗi theo trường: map field -> message, hoặc {errors: {...}}, hoặc message chung
         const fieldMap = err.data.errors || err.data.fields || err.data
-        const known = ['hoTen', 'ngaySinh', 'gioiTinh', 'soDienThoai', 'email', 'diaChi']
+        const known = ['fullName', 'dateOfBirth', 'gender', 'phoneNumber', 'email', 'address']
         const collected = {}
         if (fieldMap && typeof fieldMap === 'object') {
           for (const k of known) {
@@ -82,11 +82,11 @@ export default function GdMemberRegistration1() {
         <div className="alert alert-success">
           <h3>Đăng kí thành viên thành công</h3>
           <div className="card-info">
-            <div className="row"><span>Họ tên thành viên</span><strong>{success.hoTen}</strong></div>
-            <div className="row"><span>Mã thẻ thành viên</span><strong className="gold">{success.maThe}</strong></div>
-            <div className="row"><span>Hạng thành viên</span><strong>{success.hangMember1 || 'Thường'}</strong></div>
-            <div className="row"><span>Ngày cấp</span><strong>{success.ngayCap}</strong></div>
-            <div className="row"><span>Ngày hết hạn</span><strong>{success.ngayHetHan}</strong></div>
+            <div className="row"><span>Họ tên thành viên</span><strong>{success.fullName}</strong></div>
+            <div className="row"><span>Mã thẻ thành viên</span><strong className="gold">{success.cardNumber}</strong></div>
+            <div className="row"><span>Hạng thành viên</span><strong>{success.membershipTier || 'Thường'}</strong></div>
+            <div className="row"><span>Ngày cấp</span><strong>{success.issueDate}</strong></div>
+            <div className="row"><span>Ngày hết hạn</span><strong>{success.expiryDate}</strong></div>
           </div>
         </div>
       )}
@@ -94,22 +94,22 @@ export default function GdMemberRegistration1() {
       {generalError && <div className="alert alert-error">{generalError}</div>}
 
       <form className="panel" onSubmit={handleSubmit} noValidate>
-        {field('hoTen', 'Họ tên', true,
-          <input id="hoTen" type="text" value={form.hoTen} onChange={set('hoTen')} placeholder="Ví dụ: Nguyễn Văn A" />)}
-        {field('ngaySinh', 'Ngày sinh', false,
-          <input id="ngaySinh" type="date" value={form.ngaySinh} onChange={set('ngaySinh')} />)}
-        {field('gioiTinh', 'Giới tính', false,
-          <select id="gioiTinh" value={form.gioiTinh} onChange={set('gioiTinh')}>
+        {field('fullName', 'Họ tên', true,
+          <input id="fullName" type="text" value={form.fullName} onChange={set('fullName')} placeholder="Ví dụ: Nguyễn Văn A" />)}
+        {field('dateOfBirth', 'Ngày sinh', false,
+          <input id="dateOfBirth" type="date" value={form.dateOfBirth} onChange={set('dateOfBirth')} />)}
+        {field('gender', 'Giới tính', false,
+          <select id="gender" value={form.gender} onChange={set('gender')}>
             <option value="Nam">Nam</option>
             <option value="Nữ">Nữ</option>
             <option value="Khác">Khác</option>
           </select>)}
-        {field('soDienThoai', 'Số điện thoại', true,
-          <input id="soDienThoai" type="tel" value={form.soDienThoai} onChange={set('soDienThoai')} placeholder="Ví dụ: 0901234567" />)}
+        {field('phoneNumber', 'Số điện thoại', true,
+          <input id="phoneNumber" type="tel" value={form.phoneNumber} onChange={set('phoneNumber')} placeholder="Ví dụ: 0901234567" />)}
         {field('email', 'Email', true,
           <input id="email" type="email" value={form.email} onChange={set('email')} placeholder="Ví dụ: nguyenvana@email.com" />)}
-        {field('diaChi', 'Địa chỉ', false,
-          <input id="diaChi" type="text" value={form.diaChi} onChange={set('diaChi')} placeholder="Số nhà, đường, quận/huyện, tỉnh/thành phố" />)}
+        {field('address', 'Địa chỉ', false,
+          <input id="address" type="text" value={form.address} onChange={set('address')} placeholder="Số nhà, đường, quận/huyện, tỉnh/thành phố" />)}
         <button className="btn" type="submit" disabled={submitting}>
           {submitting ? 'Đang đăng kí…' : 'Đăng kí'}
         </button>

@@ -2,22 +2,22 @@ package com.cineman1.dto;
 
 public class LoginRequest1 {
 
-    private String tenDangNhap;
-    private String matKhau;
+    private String username;
+    private String password;
 
-    public String getTenDangNhap() {
-        return tenDangNhap;
+    public String getUsername() {
+        return username;
     }
 
-    public void setTenDangNhap(String tenDangNhap) {
-        this.tenDangNhap = tenDangNhap;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public String getMatKhau() {
-        return matKhau;
+    public String getPassword() {
+        return password;
     }
 
-    public void setMatKhau(String matKhau) {
-        this.matKhau = matKhau;
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

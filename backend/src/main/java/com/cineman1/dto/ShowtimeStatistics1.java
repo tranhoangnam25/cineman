@@ -11,26 +11,26 @@ public class ShowtimeStatistics1 {
     private Long showtimeId;
 
     @JsonFormat(pattern = "yyyy-MM-dd")
-    private LocalDate ngayChieu;
+    private LocalDate showDate;
 
     @JsonFormat(pattern = "HH:mm")
-    private LocalTime gioBatDau;
+    private LocalTime startTime;
 
-    private String tenPhong;
-    private long soVeDaBan;
-    private BigDecimal doanhThu;
+    private String roomName;
+    private long ticketsSold;
+    private BigDecimal revenue;
 
     public ShowtimeStatistics1() {
     }
 
-    public ShowtimeStatistics1(Long showtimeId, LocalDate ngayChieu, LocalTime gioBatDau,
-                               String tenPhong, long soVeDaBan, BigDecimal doanhThu) {
+    public ShowtimeStatistics1(Long showtimeId, LocalDate showDate, LocalTime startTime,
+                               String roomName, long ticketsSold, BigDecimal revenue) {
         this.showtimeId = showtimeId;
-        this.ngayChieu = ngayChieu;
-        this.gioBatDau = gioBatDau;
-        this.tenPhong = tenPhong;
-        this.soVeDaBan = soVeDaBan;
-        this.doanhThu = doanhThu;
+        this.showDate = showDate;
+        this.startTime = startTime;
+        this.roomName = roomName;
+        this.ticketsSold = ticketsSold;
+        this.revenue = revenue;
     }
 
     public Long getShowtimeId() {
@@ -41,43 +41,43 @@ public class ShowtimeStatistics1 {
         this.showtimeId = showtimeId;
     }
 
-    public LocalDate getNgayChieu() {
-        return ngayChieu;
+    public LocalDate getShowDate() {
+        return showDate;
     }
 
-    public void setNgayChieu(LocalDate ngayChieu) {
-        this.ngayChieu = ngayChieu;
+    public void setShowDate(LocalDate showDate) {
+        this.showDate = showDate;
     }
 
-    public LocalTime getGioBatDau() {
-        return gioBatDau;
+    public LocalTime getStartTime() {
+        return startTime;
     }
 
-    public void setGioBatDau(LocalTime gioBatDau) {
-        this.gioBatDau = gioBatDau;
+    public void setStartTime(LocalTime startTime) {
+        this.startTime = startTime;
     }
 
-    public String getTenPhong() {
-        return tenPhong;
+    public String getRoomName() {
+        return roomName;
     }
 
-    public void setTenPhong(String tenPhong) {
-        this.tenPhong = tenPhong;
+    public void setRoomName(String roomName) {
+        this.roomName = roomName;
     }
 
-    public long getSoVeDaBan() {
-        return soVeDaBan;
+    public long getTicketsSold() {
+        return ticketsSold;
     }
 
-    public void setSoVeDaBan(long soVeDaBan) {
-        this.soVeDaBan = soVeDaBan;
+    public void setTicketsSold(long ticketsSold) {
+        this.ticketsSold = ticketsSold;
     }
 
-    public BigDecimal getDoanhThu() {
-        return doanhThu;
+    public BigDecimal getRevenue() {
+        return revenue;
     }
 
-    public void setDoanhThu(BigDecimal doanhThu) {
-        this.doanhThu = doanhThu;
+    public void setRevenue(BigDecimal revenue) {
+        this.revenue = revenue;
     }
 }

@@ -5,8 +5,8 @@ import { login1, saveAuth } from '../api'
 // GdLogin1 — giao diện Đăng nhập (nhân viên)
 export default function GdLogin1() {
   const navigate = useNavigate()
-  const [tenDangNhap, setTenDangNhap] = useState('')
-  const [matKhau, setMatKhau] = useState('')
+  const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('')
   const [error, setError] = useState('')
   const [submitting, setSubmitting] = useState(false)
 
@@ -15,7 +15,7 @@ export default function GdLogin1() {
     setError('')
     setSubmitting(true)
     try {
-      const data = await login1(tenDangNhap.trim(), matKhau)
+      const data = await login1(username.trim(), password)
       saveAuth(data)
       navigate('/bao-cao')
     } catch (err) {
@@ -38,18 +38,18 @@ export default function GdLogin1() {
 
       <form className="panel" onSubmit={handleSubmit}>
         <div className="form-group">
-          <label htmlFor="tenDangNhap">Tên đăng nhập<span className="required">(*)</span></label>
+          <label htmlFor="username">Tên đăng nhập<span className="required">(*)</span></label>
           <input
-            id="tenDangNhap" type="text" value={tenDangNhap}
-            onChange={(e) => setTenDangNhap(e.target.value)}
+            id="username" type="text" value={username}
+            onChange={(e) => setUsername(e.target.value)}
             placeholder="Ví dụ: quanly" autoComplete="username"
           />
         </div>
         <div className="form-group">
-          <label htmlFor="matKhau">Mật khẩu<span className="required">(*)</span></label>
+          <label htmlFor="password">Mật khẩu<span className="required">(*)</span></label>
           <input
-            id="matKhau" type="password" value={matKhau}
-            onChange={(e) => setMatKhau(e.target.value)}
+            id="password" type="password" value={password}
+            onChange={(e) => setPassword(e.target.value)}
             placeholder="Nhập mật khẩu" autoComplete="current-password"
           />
         </div>

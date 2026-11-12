@@ -17,34 +17,34 @@ public class Customer1 {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "hoTen", length = 100)
-    private String hoTen;
+    @Column(name = "fullName", length = 100)
+    private String fullName;
 
-    @Column(name = "ngaySinh")
-    private LocalDate ngaySinh;
+    @Column(name = "dateOfBirth")
+    private LocalDate dateOfBirth;
 
-    @Column(name = "gioiTinh", length = 10)
-    private String gioiTinh;
+    @Column(name = "gender", length = 10)
+    private String gender;
 
-    @Column(name = "soDienThoai", length = 15, unique = true)
-    private String soDienThoai;
+    @Column(name = "phoneNumber", length = 15, unique = true)
+    private String phoneNumber;
 
     @Column(name = "email", length = 100, unique = true)
     private String email;
 
-    @Column(name = "diaChi", length = 200)
-    private String diaChi;
+    @Column(name = "address", length = 200)
+    private String address;
 
     public Customer1() {
     }
 
-    public Customer1(String hoTen, LocalDate ngaySinh, String gioiTinh, String soDienThoai, String email, String diaChi) {
-        this.hoTen = hoTen;
-        this.ngaySinh = ngaySinh;
-        this.gioiTinh = gioiTinh;
-        this.soDienThoai = soDienThoai;
+    public Customer1(String fullName, LocalDate dateOfBirth, String gender, String phoneNumber, String email, String address) {
+        this.fullName = fullName;
+        this.dateOfBirth = dateOfBirth;
+        this.gender = gender;
+        this.phoneNumber = phoneNumber;
         this.email = email;
-        this.diaChi = diaChi;
+        this.address = address;
     }
 
     public Long getId() {
@@ -55,36 +55,36 @@ public class Customer1 {
         this.id = id;
     }
 
-    public String getHoTen() {
-        return hoTen;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setHoTen(String hoTen) {
-        this.hoTen = hoTen;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
-    public LocalDate getNgaySinh() {
-        return ngaySinh;
+    public LocalDate getDateOfBirth() {
+        return dateOfBirth;
     }
 
-    public void setNgaySinh(LocalDate ngaySinh) {
-        this.ngaySinh = ngaySinh;
+    public void setDateOfBirth(LocalDate dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 
-    public String getGioiTinh() {
-        return gioiTinh;
+    public String getGender() {
+        return gender;
     }
 
-    public void setGioiTinh(String gioiTinh) {
-        this.gioiTinh = gioiTinh;
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
-    public String getSoDienThoai() {
-        return soDienThoai;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setSoDienThoai(String soDienThoai) {
-        this.soDienThoai = soDienThoai;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     public String getEmail() {
@@ -95,11 +95,11 @@ public class Customer1 {
         this.email = email;
     }
 
-    public String getDiaChi() {
-        return diaChi;
+    public String getAddress() {
+        return address;
     }
 
-    public void setDiaChi(String diaChi) {
-        this.diaChi = diaChi;
+    public void setAddress(String address) {
+        this.address = address;
     }
 }

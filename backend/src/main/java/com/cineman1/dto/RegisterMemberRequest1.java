@@ -10,53 +10,53 @@ import java.time.LocalDate;
 public class RegisterMemberRequest1 {
 
     @NotBlank(message = "Họ tên không được để trống")
-    private String hoTen;
+    private String fullName;
 
     @JsonFormat(pattern = "yyyy-MM-dd")
-    private LocalDate ngaySinh;
+    private LocalDate dateOfBirth;
 
-    private String gioiTinh;
+    private String gender;
 
     @NotBlank(message = "Số điện thoại không được để trống")
     @Pattern(regexp = "0\\d{9}", message = "Số điện thoại phải bắt đầu bằng 0 và có 10 chữ số")
-    private String soDienThoai;
+    private String phoneNumber;
 
     @NotBlank(message = "Email không được để trống")
     @Email(message = "Email không đúng định dạng")
     private String email;
 
-    private String diaChi;
+    private String address;
 
-    public String getHoTen() {
-        return hoTen;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setHoTen(String hoTen) {
-        this.hoTen = hoTen;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
-    public LocalDate getNgaySinh() {
-        return ngaySinh;
+    public LocalDate getDateOfBirth() {
+        return dateOfBirth;
     }
 
-    public void setNgaySinh(LocalDate ngaySinh) {
-        this.ngaySinh = ngaySinh;
+    public void setDateOfBirth(LocalDate dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 
-    public String getGioiTinh() {
-        return gioiTinh;
+    public String getGender() {
+        return gender;
     }
 
-    public void setGioiTinh(String gioiTinh) {
-        this.gioiTinh = gioiTinh;
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
-    public String getSoDienThoai() {
-        return soDienThoai;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setSoDienThoai(String soDienThoai) {
-        this.soDienThoai = soDienThoai;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     public String getEmail() {
@@ -67,11 +67,11 @@ public class RegisterMemberRequest1 {
         this.email = email;
     }
 
-    public String getDiaChi() {
-        return diaChi;
+    public String getAddress() {
+        return address;
     }
 
-    public void setDiaChi(String diaChi) {
-        this.diaChi = diaChi;
+    public void setAddress(String address) {
+        this.address = address;
     }
 }

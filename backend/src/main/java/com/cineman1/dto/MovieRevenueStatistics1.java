@@ -5,18 +5,18 @@ import java.math.BigDecimal;
 public class MovieRevenueStatistics1 {
 
     private Long movieId;
-    private String tenMovie1;
-    private long soVeDaBan;
-    private BigDecimal doanhThu;
+    private String movieName;
+    private long ticketsSold;
+    private BigDecimal revenue;
 
     public MovieRevenueStatistics1() {
     }
 
-    public MovieRevenueStatistics1(Long movieId, String tenMovie1, long soVeDaBan, BigDecimal doanhThu) {
+    public MovieRevenueStatistics1(Long movieId, String movieName, long ticketsSold, BigDecimal revenue) {
         this.movieId = movieId;
-        this.tenMovie1 = tenMovie1;
-        this.soVeDaBan = soVeDaBan;
-        this.doanhThu = doanhThu;
+        this.movieName = movieName;
+        this.ticketsSold = ticketsSold;
+        this.revenue = revenue;
     }
 
     public Long getMovieId() {
@@ -27,27 +27,27 @@ public class MovieRevenueStatistics1 {
         this.movieId = movieId;
     }
 
-    public String getTenMovie1() {
-        return tenMovie1;
+    public String getMovieName() {
+        return movieName;
     }
 
-    public void setTenMovie1(String tenMovie1) {
-        this.tenMovie1 = tenMovie1;
+    public void setMovieName(String movieName) {
+        this.movieName = movieName;
     }
 
-    public long getSoVeDaBan() {
-        return soVeDaBan;
+    public long getTicketsSold() {
+        return ticketsSold;
     }
 
-    public void setSoVeDaBan(long soVeDaBan) {
-        this.soVeDaBan = soVeDaBan;
+    public void setTicketsSold(long ticketsSold) {
+        this.ticketsSold = ticketsSold;
     }
 
-    public BigDecimal getDoanhThu() {
-        return doanhThu;
+    public BigDecimal getRevenue() {
+        return revenue;
     }
 
-    public void setDoanhThu(BigDecimal doanhThu) {
-        this.doanhThu = doanhThu;
+    public void setRevenue(BigDecimal revenue) {
+        this.revenue = revenue;
     }
 }

@@ -24,35 +24,35 @@ public class StatisticsService1 {
         this.movieStatisticsRepository1 = movieStatisticsRepository1;
     }
 
-    public MovieStatisticsResponse1 getTKPhim(LocalDate startDate, LocalDate endDate) {
-        kiemTraKhoangNgay(startDate, endDate);
+    public MovieStatisticsResponse1 getMovieStatistics(LocalDate startDate, LocalDate endDate) {
+        validateDateRange(startDate, endDate);
         LocalDateTime from = startDate.atStartOfDay();
         LocalDateTime to = endDate.atTime(LocalTime.of(23, 59, 59));
 
-        List<MovieRevenueStatistics1> danhSach =
-                movieStatisticsRepository1.getTKPhim(VE_DA_BAN, from, to);
+        List<MovieRevenueStatistics1> movies =
+                movieStatisticsRepository1.getMovieStatistics(VE_DA_BAN, from, to);
 
-        long tongSoVe = danhSach.stream().mapToLong(MovieRevenueStatistics1::getSoVeDaBan).sum();
-        BigDecimal tongDoanhThu = danhSach.stream()
-                .map(MovieRevenueStatistics1::getDoanhThu)
+        long totalTickets = movies.stream().mapToLong(MovieRevenueStatistics1::getTicketsSold).sum();
+        BigDecimal totalRevenue = movies.stream()
+                .map(MovieRevenueStatistics1::getRevenue)
                 .filter(java.util.Objects::nonNull)
                 .reduce(BigDecimal.ZERO, BigDecimal::add);
 
-        return new MovieStatisticsResponse1(danhSach, tongSoVe, tongDoanhThu);
+        return new MovieStatisticsResponse1(movies, totalTickets, totalRevenue);
     }
 
-    public List<ShowtimeStatistics1> getSuatChieuCuaPhim(Long movieId, LocalDate startDate, LocalDate endDate) {
-        kiemTraKhoangNgay(startDate, endDate);
+    public List<ShowtimeStatistics1> getShowtimesOfMovie(Long movieId, LocalDate startDate, LocalDate endDate) {
+        validateDateRange(startDate, endDate);
         LocalDateTime from = startDate.atStartOfDay();
         LocalDateTime to = endDate.atTime(LocalTime.of(23, 59, 59));
-        return movieStatisticsRepository1.getSuatChieuCuaPhim(VE_DA_BAN, movieId, from, to);
+        return movieStatisticsRepository1.getShowtimesOfMovie(VE_DA_BAN, movieId, from, to);
     }
 
-    public List<InvoiceStatistics1> getHoaDonCuaSuatChieu(Long showtimeId) {
-        return movieStatisticsRepository1.getHoaDonCuaSuatChieu(showtimeId);
+    public List<InvoiceStatistics1> getInvoicesOfShowtime(Long showtimeId) {
+        return movieStatisticsRepository1.getInvoicesOfShowtime(showtimeId);
     }
 
-    private void kiemTraKhoangNgay(LocalDate startDate, LocalDate endDate) {
+    private void validateDateRange(LocalDate startDate, LocalDate endDate) {
         if (startDate == null || endDate == null) {
             throw new IllegalArgumentException("Phải chọn ngày bắt đầu và ngày kết thúc");
         }

@@ -29,7 +29,7 @@ public class StatisticsController1 {
     public ResponseEntity<MovieStatisticsResponse1> thongKePhim(
             @RequestParam("startDate") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate startDate,
             @RequestParam("endDate") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate endDate) {
-        return ResponseEntity.ok(statisticsService1.getTKPhim(startDate, endDate));
+        return ResponseEntity.ok(statisticsService1.getMovieStatistics(startDate, endDate));
     }
 
     @GetMapping("/movies1/{movieId}/showtimes1")
@@ -37,12 +37,12 @@ public class StatisticsController1 {
             @PathVariable("movieId") Long movieId,
             @RequestParam("startDate") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate startDate,
             @RequestParam("endDate") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate endDate) {
-        return ResponseEntity.ok(statisticsService1.getSuatChieuCuaPhim(movieId, startDate, endDate));
+        return ResponseEntity.ok(statisticsService1.getShowtimesOfMovie(movieId, startDate, endDate));
     }
 
     @GetMapping("/showtimes1/{showtimeId}/invoices1")
     public ResponseEntity<List<InvoiceStatistics1>> thongKeHoaDon(
             @PathVariable("showtimeId") Long showtimeId) {
-        return ResponseEntity.ok(statisticsService1.getHoaDonCuaSuatChieu(showtimeId));
+        return ResponseEntity.ok(statisticsService1.getInvoicesOfShowtime(showtimeId));
     }
 }

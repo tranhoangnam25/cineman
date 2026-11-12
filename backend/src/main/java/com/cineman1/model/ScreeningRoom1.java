@@ -15,26 +15,26 @@ public class ScreeningRoom1 {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "tenPhong", length = 50)
-    private String tenPhong;
+    @Column(name = "roomName", length = 50)
+    private String roomName;
 
-    @Column(name = "soGhe")
-    private int soGhe;
+    @Column(name = "seatCount")
+    private int seatCount;
 
-    @Column(name = "loaiPhong", length = 20)
-    private String loaiPhong;
+    @Column(name = "roomType", length = 20)
+    private String roomType;
 
-    @Column(name = "trangThai", length = 20)
-    private String trangThai;
+    @Column(name = "status", length = 20)
+    private String status;
 
     public ScreeningRoom1() {
     }
 
-    public ScreeningRoom1(String tenPhong, int soGhe, String loaiPhong, String trangThai) {
-        this.tenPhong = tenPhong;
-        this.soGhe = soGhe;
-        this.loaiPhong = loaiPhong;
-        this.trangThai = trangThai;
+    public ScreeningRoom1(String roomName, int seatCount, String roomType, String status) {
+        this.roomName = roomName;
+        this.seatCount = seatCount;
+        this.roomType = roomType;
+        this.status = status;
     }
 
     public Long getId() {
@@ -45,35 +45,35 @@ public class ScreeningRoom1 {
         this.id = id;
     }
 
-    public String getTenPhong() {
-        return tenPhong;
+    public String getRoomName() {
+        return roomName;
     }
 
-    public void setTenPhong(String tenPhong) {
-        this.tenPhong = tenPhong;
+    public void setRoomName(String roomName) {
+        this.roomName = roomName;
     }
 
-    public int getSoGhe() {
-        return soGhe;
+    public int getSeatCount() {
+        return seatCount;
     }
 
-    public void setSoGhe(int soGhe) {
-        this.soGhe = soGhe;
+    public void setSeatCount(int seatCount) {
+        this.seatCount = seatCount;
     }
 
-    public String getLoaiPhong() {
-        return loaiPhong;
+    public String getRoomType() {
+        return roomType;
     }
 
-    public void setLoaiPhong(String loaiPhong) {
-        this.loaiPhong = loaiPhong;
+    public void setRoomType(String roomType) {
+        this.roomType = roomType;
     }
 
-    public String getTrangThai() {
-        return trangThai;
+    public String getStatus() {
+        return status;
     }
 
-    public void setTrangThai(String trangThai) {
-        this.trangThai = trangThai;
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

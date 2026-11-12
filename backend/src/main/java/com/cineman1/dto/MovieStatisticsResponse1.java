@@ -5,40 +5,40 @@ import java.util.List;
 
 public class MovieStatisticsResponse1 {
 
-    private List<MovieRevenueStatistics1> danhSach;
-    private long tongSoVe;
-    private BigDecimal tongDoanhThu;
+    private List<MovieRevenueStatistics1> movies;
+    private long totalTickets;
+    private BigDecimal totalRevenue;
 
     public MovieStatisticsResponse1() {
     }
 
-    public MovieStatisticsResponse1(List<MovieRevenueStatistics1> danhSach, long tongSoVe, BigDecimal tongDoanhThu) {
-        this.danhSach = danhSach;
-        this.tongSoVe = tongSoVe;
-        this.tongDoanhThu = tongDoanhThu;
+    public MovieStatisticsResponse1(List<MovieRevenueStatistics1> movies, long totalTickets, BigDecimal totalRevenue) {
+        this.movies = movies;
+        this.totalTickets = totalTickets;
+        this.totalRevenue = totalRevenue;
     }
 
-    public List<MovieRevenueStatistics1> getDanhSach() {
-        return danhSach;
+    public List<MovieRevenueStatistics1> getMovies() {
+        return movies;
     }
 
-    public void setDanhSach(List<MovieRevenueStatistics1> danhSach) {
-        this.danhSach = danhSach;
+    public void setMovies(List<MovieRevenueStatistics1> movies) {
+        this.movies = movies;
     }
 
-    public long getTongSoVe() {
-        return tongSoVe;
+    public long getTotalTickets() {
+        return totalTickets;
     }
 
-    public void setTongSoVe(long tongSoVe) {
-        this.tongSoVe = tongSoVe;
+    public void setTotalTickets(long totalTickets) {
+        this.totalTickets = totalTickets;
     }
 
-    public BigDecimal getTongDoanhThu() {
-        return tongDoanhThu;
+    public BigDecimal getTotalRevenue() {
+        return totalRevenue;
     }
 
-    public void setTongDoanhThu(BigDecimal tongDoanhThu) {
-        this.tongDoanhThu = tongDoanhThu;
+    public void setTotalRevenue(BigDecimal totalRevenue) {
+        this.totalRevenue = totalRevenue;
     }
 }

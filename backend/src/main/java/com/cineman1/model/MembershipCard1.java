@@ -23,27 +23,27 @@ public class MembershipCard1 {
     @JoinColumn(name = "memberId", unique = true)
     private Member1 member1;
 
-    @Column(name = "maThe", length = 20, unique = true)
-    private String maThe;
+    @Column(name = "cardNumber", length = 20, unique = true)
+    private String cardNumber;
 
-    @Column(name = "ngayCap")
-    private LocalDate ngayCap;
+    @Column(name = "issueDate")
+    private LocalDate issueDate;
 
-    @Column(name = "ngayHetHan")
-    private LocalDate ngayHetHan;
+    @Column(name = "expiryDate")
+    private LocalDate expiryDate;
 
-    @Column(name = "trangThai", length = 20)
-    private String trangThai;
+    @Column(name = "status", length = 20)
+    private String status;
 
     public MembershipCard1() {
     }
 
-    public MembershipCard1(Member1 member1, String maThe, LocalDate ngayCap, LocalDate ngayHetHan, String trangThai) {
+    public MembershipCard1(Member1 member1, String cardNumber, LocalDate issueDate, LocalDate expiryDate, String status) {
         this.member1 = member1;
-        this.maThe = maThe;
-        this.ngayCap = ngayCap;
-        this.ngayHetHan = ngayHetHan;
-        this.trangThai = trangThai;
+        this.cardNumber = cardNumber;
+        this.issueDate = issueDate;
+        this.expiryDate = expiryDate;
+        this.status = status;
     }
 
     public Long getId() {
@@ -62,35 +62,35 @@ public class MembershipCard1 {
         this.member1 = member1;
     }
 
-    public String getMaThe() {
-        return maThe;
+    public String getCardNumber() {
+        return cardNumber;
     }
 
-    public void setMaThe(String maThe) {
-        this.maThe = maThe;
+    public void setCardNumber(String cardNumber) {
+        this.cardNumber = cardNumber;
     }
 
-    public LocalDate getNgayCap() {
-        return ngayCap;
+    public LocalDate getIssueDate() {
+        return issueDate;
     }
 
-    public void setNgayCap(LocalDate ngayCap) {
-        this.ngayCap = ngayCap;
+    public void setIssueDate(LocalDate issueDate) {
+        this.issueDate = issueDate;
     }
 
-    public LocalDate getNgayHetHan() {
-        return ngayHetHan;
+    public LocalDate getExpiryDate() {
+        return expiryDate;
     }
 
-    public void setNgayHetHan(LocalDate ngayHetHan) {
-        this.ngayHetHan = ngayHetHan;
+    public void setExpiryDate(LocalDate expiryDate) {
+        this.expiryDate = expiryDate;
     }
 
-    public String getTrangThai() {
-        return trangThai;
+    public String getStatus() {
+        return status;
     }
 
-    public void setTrangThai(String trangThai) {
-        this.trangThai = trangThai;
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

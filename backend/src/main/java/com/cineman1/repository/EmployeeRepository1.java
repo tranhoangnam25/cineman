@@ -7,5 +7,5 @@ import java.util.Optional;
 
 public interface EmployeeRepository1 extends JpaRepository<Employee1, Long> {
 
-    Optional<Employee1> findByTenDangNhap(String tenDangNhap);
+    Optional<Employee1> findByUsername(String username);
 }

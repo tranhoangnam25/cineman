@@ -10,21 +10,21 @@ public class InvoiceStatistics1 {
     private Long invoiceId;
 
     @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
-    private LocalDateTime ngayLap;
+    private LocalDateTime issuedAt;
 
-    private String tenKhachHang;
-    private long soVe;
-    private BigDecimal tongTien;
+    private String customerName;
+    private long ticketCount;
+    private BigDecimal totalAmount;
 
     public InvoiceStatistics1() {
     }
 
-    public InvoiceStatistics1(Long invoiceId, LocalDateTime ngayLap, String tenKhachHang, long soVe, BigDecimal tongTien) {
+    public InvoiceStatistics1(Long invoiceId, LocalDateTime issuedAt, String customerName, long ticketCount, BigDecimal totalAmount) {
         this.invoiceId = invoiceId;
-        this.ngayLap = ngayLap;
-        this.tenKhachHang = tenKhachHang;
-        this.soVe = soVe;
-        this.tongTien = tongTien;
+        this.issuedAt = issuedAt;
+        this.customerName = customerName;
+        this.ticketCount = ticketCount;
+        this.totalAmount = totalAmount;
     }
 
     public Long getInvoiceId() {
@@ -35,35 +35,35 @@ public class InvoiceStatistics1 {
         this.invoiceId = invoiceId;
     }
 
-    public LocalDateTime getNgayLap() {
-        return ngayLap;
+    public LocalDateTime getIssuedAt() {
+        return issuedAt;
     }
 
-    public void setNgayLap(LocalDateTime ngayLap) {
-        this.ngayLap = ngayLap;
+    public void setIssuedAt(LocalDateTime issuedAt) {
+        this.issuedAt = issuedAt;
     }
 
-    public String getTenKhachHang() {
-        return tenKhachHang;
+    public String getCustomerName() {
+        return customerName;
     }
 
-    public void setTenKhachHang(String tenKhachHang) {
-        this.tenKhachHang = tenKhachHang;
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
     }
 
-    public long getSoVe() {
-        return soVe;
+    public long getTicketCount() {
+        return ticketCount;
     }
 
-    public void setSoVe(long soVe) {
-        this.soVe = soVe;
+    public void setTicketCount(long ticketCount) {
+        this.ticketCount = ticketCount;
     }
 
-    public BigDecimal getTongTien() {
-        return tongTien;
+    public BigDecimal getTotalAmount() {
+        return totalAmount;
     }
 
-    public void setTongTien(BigDecimal tongTien) {
-        this.tongTien = tongTien;
+    public void setTotalAmount(BigDecimal totalAmount) {
+        this.totalAmount = totalAmount;
     }
 }

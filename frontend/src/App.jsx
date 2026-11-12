@@ -31,7 +31,7 @@ function TopBar() {
       <div className="user-info">
         {loggedIn && user ? (
           <>
-            <span>Xin chào, <strong>{user.hoTen}</strong> ({user.vaiTro})</span>
+            <span>Xin chào, <strong>{user.fullName}</strong> ({user.role})</span>
             <button className="btn btn-ghost" onClick={handleLogout}>Đăng xuất</button>
           </>
         ) : (

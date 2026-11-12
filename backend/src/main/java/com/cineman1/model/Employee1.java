@@ -17,39 +17,39 @@ public class Employee1 {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "hoTen", length = 100)
-    private String hoTen;
+    @Column(name = "fullName", length = 100)
+    private String fullName;
 
-    @Column(name = "ngaySinh")
-    private LocalDate ngaySinh;
+    @Column(name = "dateOfBirth")
+    private LocalDate dateOfBirth;
 
-    @Column(name = "soDienThoai", length = 15)
-    private String soDienThoai;
+    @Column(name = "phoneNumber", length = 15)
+    private String phoneNumber;
 
     @Column(name = "email", length = 100)
     private String email;
 
-    @Column(name = "tenDangNhap", length = 50, unique = true)
-    private String tenDangNhap;
+    @Column(name = "username", length = 50, unique = true)
+    private String username;
 
-    @Column(name = "matKhau", length = 100)
-    private String matKhau;
+    @Column(name = "password", length = 100)
+    private String password;
 
-    @Column(name = "vaiTro", length = 20)
-    private String vaiTro;
+    @Column(name = "role", length = 20)
+    private String role;
 
     public Employee1() {
     }
 
-    public Employee1(String hoTen, LocalDate ngaySinh, String soDienThoai, String email,
-                     String tenDangNhap, String matKhau, String vaiTro) {
-        this.hoTen = hoTen;
-        this.ngaySinh = ngaySinh;
-        this.soDienThoai = soDienThoai;
+    public Employee1(String fullName, LocalDate dateOfBirth, String phoneNumber, String email,
+                     String username, String password, String role) {
+        this.fullName = fullName;
+        this.dateOfBirth = dateOfBirth;
+        this.phoneNumber = phoneNumber;
         this.email = email;
-        this.tenDangNhap = tenDangNhap;
-        this.matKhau = matKhau;
-        this.vaiTro = vaiTro;
+        this.username = username;
+        this.password = password;
+        this.role = role;
     }
 
     public Long getId() {
@@ -60,28 +60,28 @@ public class Employee1 {
         this.id = id;
     }
 
-    public String getHoTen() {
-        return hoTen;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setHoTen(String hoTen) {
-        this.hoTen = hoTen;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
-    public LocalDate getNgaySinh() {
-        return ngaySinh;
+    public LocalDate getDateOfBirth() {
+        return dateOfBirth;
     }
 
-    public void setNgaySinh(LocalDate ngaySinh) {
-        this.ngaySinh = ngaySinh;
+    public void setDateOfBirth(LocalDate dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 
-    public String getSoDienThoai() {
-        return soDienThoai;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setSoDienThoai(String soDienThoai) {
-        this.soDienThoai = soDienThoai;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     public String getEmail() {
@@ -92,27 +92,27 @@ public class Employee1 {
         this.email = email;
     }
 
-    public String getTenDangNhap() {
-        return tenDangNhap;
+    public String getUsername() {
+        return username;
     }
 
-    public void setTenDangNhap(String tenDangNhap) {
-        this.tenDangNhap = tenDangNhap;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public String getMatKhau() {
-        return matKhau;
+    public String getPassword() {
+        return password;
     }
 
-    public void setMatKhau(String matKhau) {
-        this.matKhau = matKhau;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public String getVaiTro() {
-        return vaiTro;
+    public String getRole() {
+        return role;
     }
 
-    public void setVaiTro(String vaiTro) {
-        this.vaiTro = vaiTro;
+    public void setRole(String role) {
+        this.role = role;
     }
 }
